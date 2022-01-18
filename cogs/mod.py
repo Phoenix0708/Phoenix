@@ -39,7 +39,9 @@ class Mod(commands.Cog):
      elif isinstance(error , commands.MemberNotFound):
        await ctx.reply(f'```{ctx.author.name}, I did not seem to find this particular member in the server```')
      elif isinstance(error , commands.BotMissingPermissions):
-      await ctx.reply(f'```{ctx.author.name}, Uh-Oh I guess I am missing permissions to run this command```')  
+      await ctx.reply(f'```{ctx.author.name}, Uh-Oh I guess I am missing permissions to run this command```')
+     elif isinstance(error, commands.NotOwner):
+       await ctx.reply(f'```{ctx.author.name}, You do not have developer permission to run this command```')  
 
 def setup(client):
   client.add_cog(Mod(client))
