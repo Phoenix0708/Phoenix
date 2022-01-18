@@ -24,7 +24,7 @@ class Mod(commands.Cog):
 
    @commands.command()
    @commands.has_permissions(manage_messages=True)
-   async def purge(self, ctx, amount):
+   async def purge(self, ctx,*,  amount):
      await ctx.channel.purge(limit=amount) 
      await ctx.send(f'Purged {amount} messages')
        
