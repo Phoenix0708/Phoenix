@@ -7,8 +7,9 @@ class Bot(commands.Cog):
     self.client = client
 
    @commands.command()
+   @commands.is_owner()
    async def noob(self, ctx):
-    await ctx.reply('Noob hoga tera baap saale')
+    await ctx.reply('Raman,Ankit PRO :)')
 
 def setup(client):
   client.add_cog(Bot(client))    
