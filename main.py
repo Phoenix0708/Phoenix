@@ -23,6 +23,5 @@ client.remove_command('help')
 for filename in os.listdir('./cogs'):
   if filename.endswith('.py'):
     client.load_extension(f'cogs.{filename[:-3]}')
-    client.load_extension('jishaku')
-    
+
 client.run('OTIyODQzNTQ3MjQ4NTE3MTcw.YcHXBw.QeXfaLJ22FuWi9WofhJ6B9dGiNE')    
