@@ -20,7 +20,13 @@ class Mod(commands.Cog):
    async def ban(self, ctx, member:discord.Member,* , reason=None):
        await ctx.send(f'Banned {member.name}')
        await member.ban(reason=reason)
-       await member.send(f'You were banned in {ctx.guild.name} for '+reason) 
+       await member.send(f'You were banned in {ctx.guild.name} for '+reason) \
+
+   @commands.command()
+   @commands.has_permissions(manage_messages=True) 
+   async def purge(self, ctx, *, ammount:int):
+     await ctx.channel.purge(limit=ammount+1)
+     await ctx.send(f'Purged {ammount} messages')     
        
    @commands.Cog.listener()
    async def on_command_error(self, ctx, error):
