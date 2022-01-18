@@ -1,2 +1,2 @@
-# Phoenix
-A Noob bot by Noob Dev
+# Phoenixx
+ A Noob Bot by Noob Dev
