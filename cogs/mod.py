@@ -21,14 +21,7 @@ class Mod(commands.Cog):
        await ctx.send(f'Banned {member.name}')
        await member.ban(reason=reason)
        await member.send(f'You were banned in {ctx.guild.name} for '+reason) 
-
-   @commands.command()
-   @commands.has_permissions(manage_messages=True)
-   async def purge(self, ctx,*,  amount):
-     await ctx.channel.purge(limit=amount) 
-     await ctx.send(f'Purged {amount} messages')
        
-
    @commands.Cog.listener()
    async def on_command_error(self, ctx, error):
      if isinstance(error, commands.MissingRequiredArgument):
