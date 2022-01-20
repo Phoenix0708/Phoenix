@@ -3,16 +3,17 @@ from discord.ext import commands
 from discord.ext import tasks
 from itertools import cycle
 import os
+import pymongo
 
 
-owners=['814353938429771776']
+owners=['814353938429771776','918410542203412480']
 client=commands.Bot(command_prefix='.',set_owners=owners)
 status=cycle(['.help','Phoenix'])
 
-@client.event
-async def on_ready():
-  change_status.start()
-  print('Running')
+cluster = pymongo.MongoClient('mongodb+srv://Phoenix:phoenixu@demonrpg.at2am.mongodb.net/test')
+db = cluster['DemonRPG']
+
+
 
 @tasks.loop(seconds=7)
 async def change_status():
